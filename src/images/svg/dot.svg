@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="83.317" height="99.776" viewBox="0 0 83.317 99.776">
+    <defs>
+        <filter id="prefix__Tracé_365" width="83.317" height="99.776" x="0" y="0" filterUnits="userSpaceOnUse">
+            <feOffset dy="10"/>
+            <feGaussianBlur result="blur" stdDeviation="7.5"/>
+            <feFlood flood-opacity=".4"/>
+            <feComposite in2="blur" operator="in"/>
+            <feComposite in="SourceGraphic"/>
+        </filter>
+    </defs>
+    <g id="prefix__dot" transform="translate(22.5 12.5)">
+        <g transform="translate(-22.5 -12.5)">
+            <path id="prefix__Tracé_365-2" d="M672.072 753.321a19.159 19.159 0 0 1 32.728 13.566 25.735 25.735 0 0 1-1.993 9.129 56.428 56.428 0 0 1-4.822 9.644q-2.83 4.5-5.593 8.422t-4.693 6.236l-2.057 2.186q-.771-.9-2.057-2.379t-4.629-5.914a98.767 98.767 0 0 1-5.856-8.611 62.388 62.388 0 0 1-4.565-9.451 25.991 25.991 0 0 1-2.057-9.258 18.473 18.473 0 0 1 5.594-13.57z" data-name="Tracé 365" transform="translate(-643.98 -735.23)" style="fill:#00707f"/>
+        </g>
+        <ellipse id="prefix__Ellipse_77" cx="14.58" cy="14.164" data-name="Ellipse 77" rx="14.58" ry="14.164" transform="translate(4.394 4.964)" style="fill:#fff"/>
+    </g>
+</svg>

@@ -1,0 +1,258 @@
+@import "../../styles/base";
+
+
+.page-reports {
+  overflow: unset;
+  height: unset;
+  .rounded-card-reports {
+    max-width: calc(1088px - 80px);
+    height: 100%;
+    margin-top: $margin-big;
+    padding: $margin-default $margin-bigger $margin-bigger;
+    margin-bottom: 40px;
+    border-radius: 10px;
+    box-shadow: 0 3px 7px rgba(0,0,0,0.1);
+    .header-reports-container {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      .header-left-side {
+        display: flex;
+        align-items: center;
+        font-size: 30px;
+        .header-title {
+          font-weight: bold;
+          color: $color-text-dark;
+          margin-right: $margin-default;
+        }
+        .header-year {
+          color: $color-text-light;
+          margin-right: $margin-default;
+        }
+      }
+      .header-right-side {
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        @mixin button-base {
+          width: $margin-xbig;
+          height: $margin-bigger;
+          border: 1px solid $color-cloudy-blue;
+          border-radius: $border-radius-tiny;
+          transition: background-color 0.05s;
+          cursor: pointer;
+          background-repeat: no-repeat;
+          background-position: center;
+        }
+        .button-download {
+          @include button-base;
+          margin-right: $margin-tiny;
+          background-image: url("../../images/svg/icon-download.svg");
+          &:hover {
+            background-color: darken(white, 2%);
+          }
+          &:active {
+            box-shadow: 0 1px 3px rgba(black, 0.1);
+            transition: box-shadow 0.1s $small-bouncy-out, background-color 0.05s;
+          }
+        }
+        .button-print {
+          @include button-base;
+          background-image: url("../../images/svg/icon-print.svg");
+          &:hover {
+            background-color: darken(white, 2%);
+          }
+          &:active {
+            box-shadow: 0 1px 3px rgba(black, 0.1);
+            transition: box-shadow 0.1s $small-bouncy-out, background-color 0.05s;
+          }
+        }
+      }
+    }
+    .quiz-results-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      flex-shrink: 1;
+      margin-top: $margin-xbig;
+      padding-bottom: $margin-big;
+      border-bottom: 2px solid $color-blue-green;
+      .student-container {
+        text-align: center;
+        width: 80px;
+        padding-top: $margin-small;
+        &.current {
+          position: relative;
+
+          .border-top {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            margin-left: -10px;
+            width: 20px;
+            border-top: 2px solid $color-blue-green;
+          }
+        }
+        .student-name {
+          font-size: $font-size-normal;
+          color: black;
+          font-weight: bold;
+        }
+      }
+    }
+    .chart-row-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      flex-shrink: 1;
+      min-height: 115px;
+      border-bottom: 2px solid $color-blue-green;
+      .chart-container {
+        width: 75px;
+        display: flex;
+        align-items: flex-end;
+
+        &.current {
+          div {
+            background: $color-blue-green;
+          }
+        }
+
+        &.future {
+          div {
+            background: $color-light-pink;
+          }
+        }
+        div {
+          background: $color-dark-blue-grey;
+          width: 100%;
+        }
+      }
+    }
+    .class-row-container{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      flex-shrink: 1;
+      padding-bottom: $margin-small;
+      border-bottom: 2px solid $color-blue-green;
+      &:last-of-type {
+        border-bottom: none;
+      }
+      .class-row-title {
+        width: 100%;
+        margin-top: 10px;
+        margin-bottom: 15px;
+        font-size: $font-size-normal;
+        font-weight: bold;
+        color: $color-dark;
+      }
+      .class-row-values {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        .class-check {
+          width: 80px;
+          text-align: center;
+          font-size: $font-size-normal;
+          color: $color-dark-blue-grey;
+          &.current {
+            font-weight: $font-weight-bolder;
+            color: $color-blue-green;
+          }
+          &.future {
+            color: $color-text-light;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include media-breakpoint-tablet() {
+  .page-reports {
+    .rounded-card-reports {
+      max-width: calc(790px - 80px);
+      width: calc(100% - 80px);
+      min-width: unset;
+      height: 840px;
+      max-height: unset;
+      display: flex;
+      flex-direction: column;
+
+      .table-container {
+        display: flex;
+        .quiz-results-container {
+          flex-direction: column;
+          margin-top: 60px;
+          border: none;
+          .student-container {
+            width: 116px;
+            height: calc(60px - 15px);
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-direction: column;
+            border-bottom: 2px solid $color-blue-green;
+            &:first-of-type {
+              border-top: 2px solid $color-blue-green;
+            }
+            .border-top {
+              display: none;
+            }
+          }
+        }
+
+        .chart-row-container {
+          flex-direction: column;
+          justify-content: unset;
+          align-items: center;
+          max-width: 130px;
+          width: 100%;
+          margin-top: 60px;
+          border: none;
+          .chart-container {
+            max-width: 130px;
+            width: 100%;
+            height: 59px;
+            margin-bottom: 1px;
+            border-bottom: 2px solid $color-blue-green;
+            &:first-of-type {
+              border-top: 2px solid $color-blue-green;
+            }
+            div {
+              height: 60px;
+            }
+          }
+        }
+
+        .class-row-container {
+          justify-content: unset;
+          width: 100%;
+          border: none;
+          .class-row-values {
+            margin-right: $margin-xbig;
+            flex-direction: column;
+            margin-top: 2px;
+            width: 100%;
+            .class-check {
+              display: flex;
+              align-items: center;
+              border-bottom: 2px solid $color-blue-green;
+              height: 60px;
+              width: 100%;
+              &:first-of-type {
+                margin-top: 1px;
+                height: 59px;
+                border-top: 2px solid $color-blue-green;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

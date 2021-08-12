@@ -1,0 +1,216 @@
+@import "../../styles/base";
+
+.page-homepage {
+  background-color: $color-background;
+  padding-top: 60px;
+  padding-bottom: 60px;
+
+  .events-container {
+    display: flex;
+    justify-content: right;
+    width: 100%;
+    padding-bottom: 50px;
+
+    .radio-buttons-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-right: 10px;
+
+      .text {
+        padding-left: 5px;
+        align-items: center;
+        font-size: 11px;
+      }
+    }
+  }
+
+  .container-of-classes {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin: auto;
+    max-width: 1080px;
+    background-color: white;
+    border-radius: 10px 10px 10px 10px;
+    padding: 10px 20px 50px 20px;
+    box-shadow: 0 10px 25px 0 rgba(0, 0, 0, 0.16);
+
+    .ddandh {
+      width: 100%;
+      display: flex;
+      justify-content: space-evenly;
+      .form-title-1 {
+        width: 100%;
+        text-align: center;
+        color: $color-text-normal;
+        font-size: 25px;
+        margin-bottom: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: 20px;
+      }
+      .dd-wrapper{
+        width: 50%;
+      }
+      .form-title-2 {
+        width: 100%;
+        text-align: center;
+        color: $color-text-normal;
+        font-size: 25px;
+        margin-bottom: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: 20px;
+      }
+    }
+    .button-container {
+      width: 60%;
+      margin: auto;
+
+      .action-button {
+        width: 100%;
+      }
+    }
+    .empty-list {
+      font-size: 20px;
+    }
+
+    .card-class {
+      position: relative;
+      height: 300px;
+      width: 250px;
+      border-radius: 10px 10px 10px 10px;
+      margin-bottom: 50px;
+      margin-left: 20px;
+      margin-right: 20px;
+      perspective: 1000px;
+      cursor: pointer;
+
+      &.no-event {
+        pointer-events: none;
+      }
+
+      &:hover {
+        .card-class-inner {
+          transform: rotateY(180deg);
+        }
+      }
+
+      .card-class-status {
+        height: 300px;
+        width: 250px;
+        position: absolute;
+        top: 0;
+        z-index: 10;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 60px 60px;
+        border-radius: 10px;
+
+        &.disabled {
+          background-color: rgba(75, 75, 75, 0.6);
+          background-image: url("../../images/svg/cross.svg");
+          cursor: not-allowed;
+        }
+
+        &.completed {
+          background-color: rgba(#04A777, 0.6);
+          background-image: url("../../images/svg/check.svg");
+        }
+      }
+
+      .card-class-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        transition: transform 0.6s;
+        transform-style: preserve-3d;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        border-radius: 10px;
+
+        .card-class-front {
+          border-radius: 10px 10px 10px 10px;
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+
+          .photo-card {
+            height: 80%;
+            width: 100%;
+            border-radius: 10px 10px 0 0;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+          }
+
+          .title-card {
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+            color: $color-text-normal;
+            padding: 15px 0 0 0;
+            border-radius: 10px;
+          }
+        }
+      }
+
+      .card-class-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        transform: rotateY(180deg);
+        border-radius: 10px 10px 10px 10px;
+
+        .content-card {
+          height: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+          font-size: 15px;
+          color: $color-text-normal;
+          font-weight: 500;
+          padding: 20px;
+        }
+      }
+    }
+  }
+}
+
+@include media-breakpoint-phone() {
+  .page-homepage{
+    .container-of-classes{
+      margin-left: 15px;
+      margin-right: 15px;
+      .ddandh{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        .form-title-1{
+          font-size: 20px;
+          margin-bottom: 20px;
+          margin-top: 20px;
+          font-weight: bold;
+        }
+        .dd-wrapper{
+          margin: 0;
+        }
+        .form-title-2{
+          font-size: 20px;
+          margin-bottom: 20px;
+          margin-top: 20px;
+          font-weight: bold;
+          margin-left: 24px;
+        }
+      }
+    }
+  }
+}

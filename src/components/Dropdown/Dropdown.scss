@@ -1,0 +1,46 @@
+@import "../../styles/base";
+
+.dd-wrapper {
+    position: relative;
+    z-index: 20;
+    user-select: none;
+    margin: 0 20px;
+    .dd-header{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 7px 3px rgba(0,0,0,0.1);
+      border: 2px solid rgba($color-dark-blue-grey, 1);
+      border-radius: 5px;
+      padding: 10px;
+        .dd-header-title{
+          margin-right: 10px;
+          font-weight: 375;
+        }
+    }
+    .dd-list{
+      position: absolute;
+      background-color: white;
+      border: 1px solid rgba($color-dark-blue-grey, 1);
+      border-radius: 0 0 5px 5px;
+      box-shadow: 0 7px 3px rgba(0,0,0,0.1);
+      width: 100%;
+      top: 59px;
+      padding-left: 10px;
+      padding-right: 10px;
+      padding-bottom: 3px;
+        .dd-list-item{
+          width: 100%;
+          padding: 7px;
+          font-weight: 375;
+          border-bottom: 1px solid $color-dark-blue-grey;
+          &:hover{
+            background-color: darken(white, 5%);
+          }
+          &:last-of-type{
+            border-bottom: unset;
+          }
+        }
+
+    }
+}

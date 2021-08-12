@@ -1,0 +1,104 @@
+@import "../../styles/base";
+
+.page-signup {
+  color: $color-dark-blue-grey;
+  .form-title {
+    font-size: $font-size-big;
+    font-weight: $font-weight-bolder;
+    color: $color-dark-blue-grey;
+    margin-bottom: $margin-xsmall;
+  }
+
+  .sub-form-title {
+    font-size: $font-size-normal;
+    color: $color-dark-blue-grey;
+    margin-bottom: $margin-default;
+  }
+
+  .first-last {
+   display: flex;
+   justify-content: space-evenly;
+    width: 100%;
+  }
+
+  .input-container {
+    width: 100%;
+    margin-bottom: 22px;
+    position: relative;
+
+
+    .input-custom {
+      width: 100%;
+    }
+
+    .error-message {
+      color: $color-watermelon;
+      position: absolute;
+      bottom: -16px;
+      font-size: $font-size-small;
+    }
+
+    .show-password-icon {
+      position: absolute;
+      height: 16px;
+      width: 25px;
+      background-image: url("../../images/svg/UI-Display.svg");
+      top: 17px;
+      right: 15px;
+      cursor: pointer;
+    }
+  }
+
+  .active {
+    background-color: $color-blue-green;
+    -webkit-mask-image: url("../../images/svg/UI-Display.svg");
+    mask-image: url("../../images/svg/UI-Display.svg");
+  }
+  .signup-button {
+    height: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: $font-size-normal;
+    font-weight: bold;
+  }
+}
+
+@include media-breakpoint-phone(){
+  .page-signup{
+    .container-of-form{
+      width:80%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+        .first-last{
+          dislay: flex;
+          flex-direction: column;
+        }
+        .form-title{
+          font-size: 20px;
+        }
+        .input-container{
+          height: 21px;
+          margin-bottom: 37px;
+          width: 125%;
+        }
+      .text{
+        margin-right: 19px;
+        margin-left: 49px;
+        font-size: 14px;
+        margin-top: 5px;
+      }
+      .signup-button{
+        width: 125%;
+      }
+    }
+    .rounded-card-signup {
+      background-position: 61px 29px;
+      margin-left: 15px;
+      margin-right: 15px;
+      padding-top: 108px;
+    }
+  }
+}
